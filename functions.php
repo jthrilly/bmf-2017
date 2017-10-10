@@ -1,9 +1,9 @@
 <?php
 
-add_theme_support('post-thumbnails'); 
+add_theme_support('post-thumbnails');
 
-if (function_exists('add_image_size')) { 
-	add_image_size('mapping-featured', 585, 500, true); 
+if (function_exists('add_image_size')) {
+	add_image_size('mapping-featured', 585, 500, true);
 	add_image_size('mapping-normal', 280, 360, true);
 }
 
@@ -25,5 +25,6 @@ register_sidebars(1, array(
 	'before_title'  => '<h2 class="widgettitle">',
 	'after_title'   => "</h2>\n",
 ) );
+
 
 ?>
