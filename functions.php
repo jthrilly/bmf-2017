@@ -26,5 +26,4 @@ register_sidebars(1, array(
 	'after_title'   => "</h2>\n",
 ) );
 
-
 ?>
