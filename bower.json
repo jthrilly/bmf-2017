@@ -1,0 +1,21 @@
+{
+  "name": "mindful2014",
+  "version": "0.2",
+  "authors": [
+    "Joshua Melville <joshmelville@gmail.com>"
+  ],
+  "description": "Mindful Monkey Wordpress Theme",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "jquery.transit": "~0.9.11"
+  }
+}

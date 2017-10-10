@@ -1,0 +1,487 @@
+﻿/*
+Theme Name: Mindful Monkey Wordpress Theme
+Author: Joshua Melville
+Author URI: http://www.github.com/jthrilly
+Description: The Wordpress theme for http://mindful-monkey.com
+Version: 0.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mindful
+
+*/
+
+
+
+
+/* 
+	Document:				styles.css
+	Modified date: 			7 Oct 2009
+	Created by:				Gemma Leigh
+	Deployment version:		project/css/styles.css
+	Notes:					Reset styles, then sitewide styles.
+								
+	=================================================================
+	Style guide, naming conventions, best practices.
+	=================================================================
+	
+	Use a common naming system:
+	
+		#parent .parent-child {
+			margin:0px auto;
+		}
+	
+	Filtering for non-compliant browsers:
+		.class-name {
+			margin: 10px 0 !important;  This will be applied by all browsers
+			margin: 5px 0; 			IE < v7 will then override the above with this value
+			}
+		
+	Do not use the following filters unless absolutely necessary and always comment reasons for use:
+		* html [selector]				IE < v7 only
+		html>body [selector]			Standards compliant browsers only
+		_margin							Underscore hack
+	
+	Links should have link, visited, hover, active and focus states and should be visible via text-decoration and/or color
+	
+	Use shorthand where possible:
+		background: url() top left no-repeat #FF0;
+		border: 1px #F0F solid;
+		font: 12px/1.4 "Trebuchet MS", Verdana, Arial, sans-serif;
+		margin: 20px 0 0 5px;
+	
+	// ACCESSIBILITY //
+	
+	Accessibility guidelines:
+	- Avoid use of display:none and visibility:hidden as screen readers cannot see the content	
+	- Acronyms should be underlined and make use of the help cursor
+	- All submit and button inputs should make use of the hand cursor
+	- An accessibility skip navigation should be included:
+	  This will be hidden off screen but visible to screen readers (see =Skip below)
+	
+	Stylesheets should be commented clearly:
+		// For bugs/issues document the problem, workaround and where possible - a URL to the explanation of the fix
+		// Use the following 'Notes to self' 
+		:TODO: 	-  reminder to change/fix/revise
+		:BUG: 	-  document a problem with the code or a particular browser
+		:KLUDGE:-  nasty workaround	
+	
+	-----------------------------------------------------------------
+	Contents of this file:
+	-----------------------------------------------------------------
+	
+	Reset styles
+	Colour Glossary
+	Skip Nav
+	
+	Typography
+	 - Links
+	 - Headings
+     - Text elements
+	
+	Basic Layout
+	- Containers
+	- Main Content
+	- Secondary Content
+	
+	Navigation 
+	- Main Nav
+	- Sub Nav
+	
+	Footer
+	Forms
+	Misc 1
+	Misc 2
+*/
+
+/* Y!UI reset.css http://developer.yahoo.com/yui/reset/ */
+body,div,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td,p { 
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+
+/* Reset Global reset to values we would expect for some elements */
+strong { font-weight: bold;}
+/* Remove Mozilla's dashed borders */
+a {outline:none;}
+a:active {outline:none;}
+input[type=submit] {outline-width:0; background:#BD222E;color:#fff;width:auto}
+input { vertical-align:middle; }
+/* Remove border around fieldset even on Opera 7 */
+fieldset { border: solid 0 transparent; }
+/* Remove blue border around linked images */
+a img {border: 0;}
+	
+		
+/* =Colour glossary
+--------------------------------------------------------------------- */	
+/* Quick reference to colours used in the site:
+
+blue:		#0061B2
+green	:	#4E8915
+purple	:	#7A006D
+orange	:	#F19914
+
+blue-h	:	#6EB8F6	
+green-h	:	#82D638	
+purple-h:	#F09AE9
+
+lightest blue: #E7F3FC
+heading blue: 	#014FAD	
+*/
+
+
+/* Site specific styles */
+
+}
+ 
+* { margin, padding: 0; }
+ 
+body {	
+	background: #1887B3 url('images/header.png') top center no-repeat;
+	font-family: Helvetica, Arial, Sans-Serif;
+	font-size: 0.9em;
+	line-height:1.3em;	
+	height: 100%;
+	color:#333;
+}
+
+#wrapper {
+	width:100%;
+
+}
+
+#page{
+	width:900px;margin-left:auto;margin-right:auto;
+}
+
+p {
+
+	margin-bottom:15px;
+	color:#333;
+	
+}
+
+li {
+
+	color:#333;
+	
+}
+ 
+.commentssection {
+
+}
+
+li.comment {
+	padding-bottom:20px;
+} 
+
+label {
+	padding-right:5px;
+	display:block;
+}
+
+h1 {
+	display: block;
+	text-decoration: none;
+	font: 5em Helvetica, Arial, Sans-Serif;
+	letter-spacing: -5px;
+	text-align: center;
+	color: #fff;
+	padding-bottom: 20px;
+}
+ 
+h2 {
+}
+ 
+#blogroll {
+background: url('images/newbg.gif');
+  min-height:800px;
+  height:auto !important;
+  height:800px;
+	-webkit-box-shadow: 0px 20px 49px #000;
+	-moz-box-shadow: 0px 20px 49px #000;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;	
+}
+
+a {
+	color:#1887B3;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration:underline;
+
+}
+
+.blog {
+	padding-bottom:35px;
+}
+
+.blog #comments a {
+	font-size: 0.9em;
+	margin-top: -20px;
+}
+
+.blogtitle {
+	font: 1.6em Tahoma, Helvetica, Arial, Sans-Serif;
+	color: #BD222E;
+	font-weight:600;
+	letter-spacing:0.5pt;
+	padding-bottom:10px;
+
+}
+
+h3 {
+	font-weight:bold
+
+}
+
+.blogdate{
+	color: #fff;
+	-webkit-box-shadow: 0px 2px 3px #000;
+	-moz-box-shadow: 0px 2px 3px #000;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	line-height: 40px;
+	margin-left: -95px;
+	margin-bottom: -38px;
+	padding-left: 5px;
+	padding-right: 5px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	vertical-align: middle;
+	width: 75px;
+	background: #BD222E;
+}
+
+.blogdate em {
+	color: #FFF9FA;
+	float: left;
+	font-size: 2.1em;
+	font-style: normal;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.reply {
+	margin-top:-10px;
+}
+
+.comments {
+	color: #fff;
+	text-transform: uppercase;
+	background: url('images/comment_bubble.png') no-repeat center top;
+	text-align:center;
+	line-height:45px;
+
+}
+
+.comments em {
+	color: #CAD6F2;
+	font-size: 1.3em;
+	font-style: normal;
+	font-weight: bold;
+	text-align: center;
+	line-height:45px;
+}
+
+.author {
+	font-size:0.7em;
+	padding-bottom:20px;
+}
+
+
+#header {
+
+	
+	height: 240px;
+}
+ 
+.maintitle {
+	padding-top:45px;
+	padding-bottom:25px;
+	font-size:7em;
+	width:100%;
+	color:#BD222E;
+	text-shadow: 2px 2px 6px #000;
+} 
+
+.menu {
+	margin-left:auto;
+	margin-right:auto;
+	width:700px;	
+}
+
+.menu ul {
+	margin:0.5em;
+}
+
+.menu ul li {
+	display:inline;
+	margin-left:10px;
+}
+
+.menu ul li a {
+	color: #6f6f6f;
+	font-size: 1.3em;
+	padding: 12px;
+}
+
+.menu ul li a:hover {
+	background:#BD222E;
+	color:#fff;
+	text-decoration:none;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0px 2px 3px #000;
+	-moz-box-shadow: 0px 2px 3px #000;
+	border-radius: 10px;	
+
+}
+
+#sidemenu ul li {
+	display:inline;
+}
+
+div.entry-content {
+	padding-top:20px;
+}
+
+div.dig-in a {
+
+	font-style:italic;
+	font-size:0.9em;
+}
+
+div.loc {
+	font-size:0.9em;
+}
+
+a.more-link {
+	display:block;
+	padding-bottom:15px;
+}
+
+ul.upcoming {
+	padding:0;
+	margin:0;
+}
+
+ol.commentlist {
+	font-size:0.9em;
+}
+
+blockquote {
+	padding-left:30px;
+	padding-right:30px;
+	font-style:italic;
+	display:block;
+}
+
+#content {
+	padding-top: 20px; 
+	padding-left:40px; 
+	padding-bottom: 20px;
+	width:535px;
+	float:left;
+	}
+
+#sidemenu {
+	
+float:right; width: 240px; font-size:0.85em;
+padding-right:25px;
+padding-left:25px;
+padding-top:9px;
+}
+
+h3#reply-title {
+	font-style:italic;
+	font-size:1.3em;
+	padding-bottom:10px;
+}
+
+#sidemenu h3 {
+	color: #1887B3;
+	font-size: 1.2em;
+	padding-bottom: 15px;
+	padding-top:15px;	
+	font-weight: bold;
+}
+
+#sidemenu div a {
+	color: #1887B3;
+}
+
+#sidemenu p {
+/*	color: #CFCFCF;*/
+}
+
+div.tagcloud {
+	padding-bottom:20px;
+}
+
+INPUT,textarea {
+	background:#ffffff;
+	color: black;
+	border-collapse:collapse;
+	padding:5px;
+	border:none;
+    webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; 
+	border:1px solid #c0c0c0;
+	width:80%;
+}
+ 
+ 
+input {
+	cursor:pointer;	
+	cursor:hand;
+} 
+img.alignleft {
+float:left;
+padding-left:20px;
+padding-top:20px;
+padding-bottom:20px
+}
+
+img.alignright {
+float:right;
+padding-right:20px;
+padding-top:20px;
+padding-bottom:20px
+}
+
+.aligncenter {
+
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+	text-align:center;
+	padding:10px;
+}

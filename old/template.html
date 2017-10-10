@@ -1,0 +1,507 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<title>Mindful Monkey</title> 
+
+
+<style type="text/css"> 
+/* 
+	Document:				styles.css
+	Modified date: 			7 Oct 2009
+	Created by:				Gemma Leigh
+	Deployment version:		project/css/styles.css
+	Notes:					Reset styles, then sitewide styles.
+								
+	=================================================================
+	Style guide, naming conventions, best practices.
+	=================================================================
+	
+	Use a common naming system:
+	
+		#parent .parent-child {
+			margin:0px auto;
+		}
+	
+	Filtering for non-compliant browsers:
+		.class-name {
+			margin: 10px 0 !important;  This will be applied by all browsers
+			margin: 5px 0; 			IE < v7 will then override the above with this value
+			}
+		
+	Do not use the following filters unless absolutely necessary and always comment reasons for use:
+		* html [selector]				IE < v7 only
+		html>body [selector]			Standards compliant browsers only
+		_margin							Underscore hack
+	
+	Links should have link, visited, hover, active and focus states and should be visible via text-decoration and/or color
+	
+	Use shorthand where possible:
+		background: url() top left no-repeat #FF0;
+		border: 1px #F0F solid;
+		font: 12px/1.4 "Trebuchet MS", Verdana, Arial, sans-serif;
+		margin: 20px 0 0 5px;
+	
+	// ACCESSIBILITY //
+	
+	Accessibility guidelines:
+	- Avoid use of display:none and visibility:hidden as screen readers cannot see the content	
+	- Acronyms should be underlined and make use of the help cursor
+	- All submit and button inputs should make use of the hand cursor
+	- An accessibility skip navigation should be included:
+	  This will be hidden off screen but visible to screen readers (see =Skip below)
+	
+	Stylesheets should be commented clearly:
+		// For bugs/issues document the problem, workaround and where possible - a URL to the explanation of the fix
+		// Use the following 'Notes to self' 
+		:TODO: 	-  reminder to change/fix/revise
+		:BUG: 	-  document a problem with the code or a particular browser
+		:KLUDGE:-  nasty workaround	
+	
+	-----------------------------------------------------------------
+	Contents of this file:
+	-----------------------------------------------------------------
+	
+	Reset styles
+	Colour Glossary
+	Skip Nav
+	
+	Typography
+	 - Links
+	 - Headings
+     - Text elements
+	
+	Basic Layout
+	- Containers
+	- Main Content
+	- Secondary Content
+	
+	Navigation 
+	- Main Nav
+	- Sub Nav
+	
+	Footer
+	Forms
+	Misc 1
+	Misc 2
+*/
+
+/* Y!UI reset.css http://developer.yahoo.com/yui/reset/ */
+body,div,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td,p { 
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+
+/* Reset Global reset to values we would expect for some elements */
+strong { font-weight: bold;}
+/* Remove Mozilla's dashed borders */
+a {outline:none;}
+a:active {outline:none;}
+input[type=submit] {outline-width:0;}
+input { vertical-align:middle; }
+/* Remove border around fieldset even on Opera 7 */
+fieldset { border: solid 0 transparent; }
+/* Remove blue border around linked images */
+a img {border: 0;}
+	
+		
+/* =Colour glossary
+--------------------------------------------------------------------- */	
+/* Quick reference to colours used in the site:
+
+blue:		#0061B2
+green	:	#4E8915
+purple	:	#7A006D
+orange	:	#F19914
+
+blue-h	:	#6EB8F6	
+green-h	:	#82D638	
+purple-h:	#F09AE9
+
+lightest blue: #E7F3FC
+heading blue: 	#014FAD	
+*/
+
+
+/* Site specific styles */
+
+
+ 
+* { margin, padding: 0; }
+ 
+body {
+	background: #C0C0C0 url('images/bg.png');
+	font-family: Helvetica, Arial, Sans-Serif;
+	font-size: 1em;
+	height: 100%;
+}
+
+p {
+	line-height:1.3em;
+	font-size:0.9em;
+	margin-bottom:20px;
+	color:#fff;
+	
+}
+ 
+h1 {
+	display: block;
+	text-decoration: none;
+	font: 5em Helvetica, Arial, Sans-Serif;
+	letter-spacing: -5px;
+	text-align: center;
+	color: #616161;
+	text-shadow: 0px 3px 8px #6f6f6f;
+	padding-bottom: 20px;
+}
+ 
+h2 {
+}
+ 
+#blogroll {
+	background: url('images/content-bg.gif') repeat-y;
+
+	-webkit-box-shadow: 0px 2px 3px #555;
+	-moz-box-shadow: 0px 2px 3px #555;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;	
+}
+
+a {
+	color: #CAD6F2;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration:underline;
+
+}
+
+.blog {
+	padding-bottom:40px;
+}
+
+.blog #comments a {
+	font-size: 0.8em;
+	margin-top: -20px;
+}
+
+.blogtitle {
+	font: 1.8em Tahoma, Helvetica, Arial, Sans-Serif;
+	color: #CFCFCF;
+	text-shadow: 0px 1px 2px #333333;
+	letter-spacing:-0.5pt;
+
+}
+
+.blogdate{
+	color: #fff;
+	-webkit-box-shadow: 0px 2px 3px #555;
+	-moz-box-shadow: 0px 2px 3px #555;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	line-height: 40px;
+	margin-left: -95px;
+	margin-bottom: -40px;
+	padding-left: 5px;
+	padding-right: 5px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	vertical-align: middle;
+	width: 75px;
+	background: #BD222E
+}
+
+.blogdate em {
+	color: #FFF9FA;
+	float: left;
+	font-size: 2.1em;
+	font-style: normal;
+	font-weight: bold;
+	text-align: center;
+}
+
+.comments {
+	color: #fff;
+	text-transform: uppercase;
+	background: url('images/comment_bubble.png') no-repeat center top;
+	text-align:center;
+	line-height:40px;
+	display:block;
+	position:relative;
+	margin-top:-48px;	
+	left: -65px; top: 25px; width: 48px; height: 48px;
+
+}
+
+.comments em {
+	color: #CAD6F2;
+	font-size: 1.4em;
+	font-style: normal;
+	font-weight: bold;
+	text-align: center;
+}
+
+.author {
+	font-size:0.7em;
+	padding-bottom:20px;
+	color:#fff;
+}
+
+
+#header {
+
+	background: url('images/header-bg1.jpg') top center no-repeat;	
+	height: 400px;
+}
+ 
+.maintitle {
+	padding-top:60px;
+	padding-bottom:10px;
+	font-size:6em;
+	width:100%;
+} 
+
+.menu {
+	margin-left:auto;
+	margin-right:auto;
+	width:700px;	
+}
+
+.menu ul {
+	margin:0.5em;
+}
+
+.menu ul li {
+	display:inline;
+	margin-left:15px;
+}
+
+.menu ul li a {
+	color: #666666;
+	font-size: 1.2em;
+	padding: 8px;
+}
+
+.menu ul li a:hover {
+	background:#9F938A;
+	color:#fff;
+	text-decoration:none;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0px 2px 3px #555;
+	-moz-box-shadow: 0px 2px 3px #555;
+	border-radius: 10px;
+	
+
+}
+
+#sidemenu {
+	
+float:right; width: 240px; font-size:0.85em;
+padding-right:25px;
+padding-top:9px;
+}
+
+#sidemenu h3 {
+	color: #CAD6F2;
+	font-size: 1.2em;
+	padding: 7px;
+	text-shadow: 1px 1px 1px #424242;
+	font-weight: bold;
+}
+
+#sidemenu div a {
+	color: #D0CAC6;
+}
+
+#sidemenu p {
+	padding: 10px;
+	color: #CFCFCF;
+}
+
+#sidemenu div {
+	padding:10px;color:#666666;
+} 
+
+INPUT {
+	background-color: #D0CAC6;
+	color: black;
+	border-collapse:collapse;
+	padding:5px;
+	border:none;
+    webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; 
+}
+ 
+</style> 
+</head> 
+ 
+<body> 
+
+<div id="wrapper" style="width:100%;">
+
+	<div id="page" style="width:900px;margin-left:auto;margin-right:auto;background:">
+	
+		<div id="header" style="height: 240px">
+		<h1 class="maintitle">Mindful Monkey</h1> 
+		<div class="menu">
+		<ul>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Training</a></li>
+			<li><a href="#">Downloads</a></li>
+			<li><a href="#">Events</a></li>
+			<li><a href="#">Contact</a></li>		
+		
+		</ul>
+		
+		</div>
+		
+ 		</div>
+ 		
+ 		
+ 		<div id="sidemenu">
+			<br />
+			<h3 style="">Why We Created This Space</h3>
+			<p style="">Over the years we have come across lots of people who 
+			resonated with some of our ideas. So we decided to find a way to 
+			continue our dialogue. <br />
+			<br />
+			We, along with many others have been saying that not all the 
+			prevailing ideas in society contribute to fulfilment or answer or 
+			needs. For instance it has been shown that having more ‘things’ does 
+			not correlate well with fulfilment. So what does? A growing number 
+			of voices have been pointing to some answers; Mindful living, 
+			positive relationships and being part of some activity that 
+			contributes to the benefit of others seem to help us feel better 
+			about ourselves and the world.<br />
+			<br />
+			This seems to be pointing to something essential. We want to be one 
+			small voice that contributes to this discussion. Mindful-monkey is a 
+			space to find ideas and resources, so stay in touch by subscribing 
+			to our newsletter or RSS feed. </p>
+			
+			<h3>Tag Cloud</h3>
+			<div class="auto-style2"><a href='http://beta.mindful-monkey.com/?tag=from-addiction-to-independence' class='tag-link-8' title='1 topic' style='font-size: 8pt;'>From Addiction to Independence</a> 
+<a href='http://beta.mindful-monkey.com/?tag=happiness' class='tag-link-4' title='3 topics' style='font-size: 16.5pt;'>Happiness</a> 
+<a href='http://beta.mindful-monkey.com/?tag=health-tips' class='tag-link-10' title='1 topic' style='font-size: 8pt;'>Health Tips</a> 
+<a href='http://beta.mindful-monkey.com/?tag=intelligent-living-tips' class='tag-link-5' title='3 topics' style='font-size: 16.5pt;'>Intelligent Living Tips</a> 
+<a href='http://beta.mindful-monkey.com/?tag=mindfulness-heartfulness' class='tag-link-9' title='3 topics' style='font-size: 16.5pt;'>Mindfulness &amp; Heartfulness</a> 
+<a href='http://beta.mindful-monkey.com/?tag=spiritual-economics' class='tag-link-7' title='4 topics' style='font-size: 20pt;'>Spiritual Economics</a></div>
+			
+			<h3>Search</h3>
+			<form role="search" method="get" id="searchform" action="http://beta.mindful-monkey.com/" > 
+			<div> 
+				<input type="text" value="" name="s" id="s" style="width: 149px" /> 
+				<input type="submit" id="searchsubmit" value="Search" /> 
+			</div> 
+			</form>
+			
+			<h3>Events</h3>
+			
+			
+			
+			
+			</div>
+ 		
+ 		
+ 		
+ 		
+ 		
+ 	
+		<div id="blogroll">
+
+
+			<div id="content" style="padding: 20px 40px; width:535px;float:left;">
+			
+				<div class="blog">
+				<div class="blogdate" style="">
+					<em style="">21</em> Aug</div>
+				
+				
+				
+
+				<div class="blogpost">
+				
+			<h2 class="blogtitle">This is a blog post</h2>  
+			<div class="author"><a href="shez.html">Shehzad</a> at 7:23pm</div>
+			<div class="comments" style=""><em>0</em></div>
+			<p>A whole bunch of text about something or other. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta pulvinar dui, eu viverra ante adipiscing vitae. Donec nibh ligula, bibendum non mattis sit amet, eleifend id tortor. Fusce enim felis, 
+			<a href="sdfsdf">suscipit ut laoreet</a> ac, varius in risus. Proin vehicula semper pellentesque. Ut commodo neque non sem commodo scelerisque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla vitae nulla purus. Sed ipsum sem, condimentum eget dictum id, dignissim et sapien. </p>
+			<p>Vivamus aliquet sem sed ipsum semper quis condimentum dolor consectetur. Maecenas mattis convallis augue, sit amet vehicula urna rhoncus et. Integer turpis metus, porttitor eu vehicula non, ullamcorper id turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sagittis mauris in tortor semper blandit. Duis luctus commodo interdum. In egestas ultrices sapien vel consectetur. Duis porttitor vulputate enim, et aliquam enim molestie non. Ut eu malesuada nulla.</p>
+
+				</div>
+				</div>
+				
+				
+				
+				<div class="blog">
+				<div class="blogdate">
+					<em>15</em> Aug</div>
+				<div class="blogpost">
+				
+			<h2 class="blogtitle">And another</h2>
+			<div class="author"><a href="shez.html">Junaid</a> at 9:35am</div>			 
+			<div class="comments" style=""><em>4</em></div>			 
+			<p>Vivamus aliquet sem sed ipsum semper quis condimentum dolor consectetur. Maecenas mattis convallis augue, sit amet vehicula urna rhoncus et. Integer turpis metus, porttitor eu vehicula non, ullamcorper id turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sagittis mauris in tortor semper blandit. Duis luctus commodo interdum. In egestas ultrices sapien vel consectetur. Duis porttitor vulputate enim, et aliquam enim molestie non. Ut eu malesuada nulla.</p>
+					<p class="auto-style1"><a href="sdfsdf">Read more... </a></p>
+				</div>
+				</div>
+	
+				
+				
+				<div class="blog">
+				<div class="blogdate" >
+					<em>05</em> Aug</div>
+				<div class="blogpost">
+				
+			<h2 class="blogtitle">Perhaps this one can have a longer title</h2>
+			<div class="author"><a href="shez.html">Shehzad</a> at 12:10pm</div>			
+			<div class="comments" style=""><em>10</em></div>			  
+			<p>A whole bunch of text about something or other. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta pulvinar dui, eu viverra ante adipiscing vitae. Donec nibh ligula, bibendum non mattis sit amet, eleifend id tortor. Fusce enim felis, 
+			<a href="sdfsdf">suscipit ut laoreet</a> ac, varius in risus. Proin vehicula semper pellentesque. Ut commodo neque non sem commodo scelerisque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla vitae nulla purus. Sed ipsum sem, condimentum eget dictum id, dignissim et sapien. Vivamus aliquet sem sed ipsum semper quis condimentum dolor consectetur. </p>
+					<p>Maecenas mattis convallis augue, sit amet vehicula urna rhoncus et. Integer turpis metus, porttitor eu vehicula non, ullamcorper id turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sagittis mauris in tortor semper blandit. Duis luctus commodo interdum. In egestas ultrices sapien vel consectetur. Duis porttitor vulputate enim, et aliquam enim molestie non. Ut eu malesuada nulla.A whole bunch of text about something or other. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta pulvinar dui, eu viverra ante adipiscing vitae. Donec nibh ligula, bibendum non mattis sit amet, eleifend id tortor. Fusce enim felis, 
+			<a href="sdfsdf">suscipit ut laoreet</a> ac, varius in risus. Proin vehicula semper pellentesque. Ut commodo neque non sem commodo scelerisque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla vitae nulla purus. Sed ipsum sem, condimentum eget dictum id, dignissim et sapien. Vivamus aliquet sem sed ipsum semper quis condimentum dolor consectetur. Maecenas mattis convallis augue, sit amet vehicula urna rhoncus et. Integer turpis metus, porttitor eu vehicula non, ullamcorper id turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sagittis mauris in tortor semper blandit. Duis luctus commodo interdum. In egestas ultrices sapien vel consectetur. Duis porttitor vulputate enim, et aliquam enim molestie non. Ut eu malesuada nulla.</p>
+				</div>
+				</div>
+				<div style="clear:both">&nbsp;</div>
+		</div>
+		</div> 
+	</div> 
+ 
+</div>
+&nbsp; 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body> 
+</html>
