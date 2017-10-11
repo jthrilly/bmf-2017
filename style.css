@@ -6178,6 +6178,7 @@ button.close {
 body {
   font-weight: 300;
   -webkit-font-smoothing: subpixel-antialiased;
+  letter-spacing: 1.5px;
 }
 p {
   margin-bottom: 22px;
@@ -6196,16 +6197,24 @@ hr {
   background-repeat: no-repeat;
 }
 .side-nav {
-  background: #eee;
+  background: #00ccff;
   padding-bottom: 100%;
   margin-bottom: -100%;
-  width: 30%;
-  max-width: 350px;
-  float: left;
+  width: 400px;
+  position: absolute;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right: 10px solid #07b5e2;
+  color: white;
+}
+.nav > li > a {
+  color: #000;
 }
 .main-panel {
-  width: 70%;
-  float: right;
+  margin-left: 400px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: inline-block;
 }
 .sidebar {
   background: #006ba7;
@@ -6227,11 +6236,12 @@ h4.entry-title {
 .post-date {
   font-style: italic;
 }
-.article-date {
-  width: 100%;
+.article-meta {
+  width: 150px;
+  float: left;
 }
 .article-content {
-  width: 100%;
+  margin-left: 150px;
 }
 @media (max-width: 650px) {
   .container {
@@ -6281,13 +6291,6 @@ h4.entry-title {
 @media (min-width: 1200px) {
   /* rules for large (> 1200) */
 }
-.mindful-navbar {
-  border: 0;
-  background: #007bc0;
-  margin-bottom: 0;
-  border-radius: 0;
-  line-height: 12px;
-}
 .navbar-default .navbar-nav > li > a {
   color: #fff;
   /* font-weight: 100; */
@@ -6303,7 +6306,8 @@ h4.entry-title {
   letter-spacing: -1px;
 }
 .front-page-header {
-  font-size: 3em;
+  font-size: 4em;
+  line-height: 0.9em;
 }
 .navbar-nav {
   padding-left: 20px;
